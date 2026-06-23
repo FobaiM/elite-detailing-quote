@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fobaim.github.io/elite-detailing-quote/sitemap.xml

@@ -692,6 +692,15 @@ button:hover {
   isolation: isolate;
 }
 
+.portfolio-card.wide {
+  grid-column: span 3;
+  min-height: 520px;
+}
+
+.portfolio-card.feature-wide {
+  grid-column: span 4;
+}
+
 .portfolio-card img {
   display: block;
   width: 100%;
@@ -1188,7 +1197,9 @@ small {
 
   .portfolio-card,
   .portfolio-card:first-child,
-  .portfolio-card:nth-child(2) {
+  .portfolio-card:nth-child(2),
+  .portfolio-card.wide,
+  .portfolio-card.feature-wide {
     grid-column: auto;
     min-height: 360px;
   }
@@ -1385,7 +1396,9 @@ small {
 
   .portfolio-card,
   .portfolio-card:first-child,
-  .portfolio-card:nth-child(2) {
+  .portfolio-card:nth-child(2),
+  .portfolio-card.wide,
+  .portfolio-card.feature-wide {
     grid-column: auto;
     min-height: min(118vw, 430px);
   }

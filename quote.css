@@ -67,6 +67,77 @@ nav {
   box-shadow: 0 0 25px rgba(22,140,255,.35);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.social-links a {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  color: #dbeafe;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: white;
+  border-color: #38bdf8;
+  background: rgba(22,140,255,.24);
+  transform: translateY(-2px);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.social-links a[href*="tiktok.com"] {
+  border-color: white;
+  background: white;
+}
+
+.social-links a[href*="tiktok.com"]:hover,
+.social-links a[href*="tiktok.com"]:focus-visible {
+  border-color: #38bdf8;
+  background: white;
+}
+
+.social-links svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.social-links img {
+  width: 19px;
+  height: 19px;
+}
+
+.social-links svg rect,
+.social-links svg circle:not(.social-icon-dot) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.social-links svg .social-icon-dot {
+  fill: currentColor;
+}
+
 .hero-overlay {
   min-height: calc(96vh - 76px);
   display: grid;
@@ -1193,6 +1264,10 @@ small {
   padding-bottom: 42px;
 }
 
+.footer-social-links {
+  margin-top: 6px;
+}
+
 .site-footer strong {
   font-size: 18px;
   text-transform: uppercase;
@@ -1473,7 +1548,14 @@ small {
 @media (max-width: 600px) {
   nav {
     padding: max(16px, env(safe-area-inset-top)) 5% 16px;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
   }
 
   .logo {

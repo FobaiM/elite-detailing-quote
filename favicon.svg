@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="330 0 660 660">
+  <title>Elite Detailing Quincy</title>
+  <defs>
+    <clipPath id="logo-crop">
+      <circle cx="660" cy="330" r="325"/>
+    </clipPath>
+  </defs>
+  <circle cx="660" cy="330" r="329" fill="#020409" stroke="#168cff" stroke-width="8"/>
+  <image href="/elite-cover.png" x="0" y="0" width="1983" height="793" preserveAspectRatio="none" clip-path="url(#logo-crop)"/>
+</svg>

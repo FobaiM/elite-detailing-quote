@@ -456,6 +456,146 @@ button:hover {
   font-size: 24px;
 }
 
+.package-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.package-card .package-type {
+  margin-bottom: 10px;
+}
+
+.package-card h3 {
+  margin-bottom: 18px;
+}
+
+.package-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(56,189,248,.35);
+}
+
+.package-price span {
+  display: inline;
+  margin: 0;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.package-price strong {
+  color: #38bdf8;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.package-features {
+  display: grid;
+  gap: 11px;
+  list-style: none;
+}
+
+.package-features li {
+  position: relative;
+  padding-left: 22px;
+  color: #dbeafe;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.package-features li::before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.package-card .package-note {
+  margin: auto 0 0;
+  padding-top: 18px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.full-package-copy {
+  margin-bottom: 24px;
+  color: #dbeafe;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.addon-pricing {
+  margin-top: 54px;
+  padding-top: 38px;
+  border-top: 1px solid rgba(56,189,248,.35);
+}
+
+.addon-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.addon-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.addon-heading h3 {
+  font-size: 30px;
+}
+
+.addon-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 30px;
+  list-style: none;
+}
+
+.addon-list li {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.addon-list h4 {
+  margin-bottom: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+.addon-list p {
+  max-width: 34ch;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.addon-list strong {
+  flex: 0 0 auto;
+  color: #38bdf8;
+  font-size: 17px;
+}
+
 .services,
 .faq {
   background:
@@ -1464,6 +1604,10 @@ small {
     min-width: 0;
   }
 
+  .addon-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .media-card.featured {
     grid-column: auto;
   }
@@ -1556,6 +1700,10 @@ small {
     width: 100%;
     justify-content: space-between;
     gap: 12px;
+  }
+
+  .addon-list {
+    grid-template-columns: 1fr;
   }
 
   .logo {

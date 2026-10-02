@@ -238,7 +238,9 @@ button:hover {
   margin-top: 28px;
 }
 
-.hero-proof span {
+.hero-proof > span,
+.hero-proof > a {
+  display: inline-flex;
   color: #e5f4ff;
   font-size: 13px;
   font-weight: 900;
@@ -251,8 +253,34 @@ button:hover {
 }
 
 .hero-proof .hero-proof-insurance {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
   border-color: rgba(56,189,248,.58);
   background: rgba(0,45,110,.58);
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-proof .hero-proof-insurance small {
+  margin: 0;
+  color: #7dd3fc;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.hero-proof .hero-proof-insurance:hover,
+.hero-proof .hero-proof-insurance:focus-visible {
+  border-color: #7dd3fc;
+  background: rgba(0,87,255,.34);
+}
+
+.hero-proof .hero-proof-insurance:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 3px;
 }
 
 .booking-panel {

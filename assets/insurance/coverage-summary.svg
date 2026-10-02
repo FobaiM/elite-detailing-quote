@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title description" style="display:block;width:100%;height:auto;max-width:1200px;margin:0 auto">
+  <title id="title">Elite Detailing Quincy liability coverage summary</title>
+  <desc id="description">A customer-facing summary of commercial general liability coverage through Liberty Mutual Insurance, based on a certificate supplied by Elite Detailing Quincy. Personal and policy identifiers are withheld.</desc>
+  <rect width="1200" height="1500" fill="#eaf0f7"/>
+  <rect x="48" y="48" width="1104" height="1404" rx="20" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <path d="M68 68h1064v300H68z" fill="#030712"/>
+  <path d="M68 348h1064v20H68z" fill="#168cff"/>
+  <text x="112" y="145" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="4">ELITE DETAILING</text>
+  <text x="112" y="187" fill="#38bdf8" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="7">QUINCY</text>
+  <text x="1088" y="145" fill="#93c5fd" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2" text-anchor="end">CUSTOMER COVERAGE SUMMARY</text>
+  <text x="1088" y="184" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="end">Prepared from a certificate supplied by the business</text>
+  <text x="112" y="270" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" letter-spacing="1">LIABILITY COVERAGE</text>
+  <text x="112" y="316" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="21">A clear summary for customers who want peace of mind</text>
+
+  <text x="112" y="442" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">INSURED BUSINESS</text>
+  <text x="112" y="493" fill="#0b1220" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Elite Detailing Quincy</text>
+  <path d="M112 529h976" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="112" y="592" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">INSURANCE CARRIER</text>
+  <text x="112" y="644" fill="#0b1220" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">Liberty Mutual Insurance</text>
+  <path d="M112 680h976" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="112" y="744" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">COVERAGE TYPE</text>
+  <text x="112" y="796" fill="#0b1220" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Commercial General Liability</text>
+  <path d="M112 832h976" stroke="#dbe3ee" stroke-width="2"/>
+
+  <rect x="112" y="876" width="976" height="190" rx="10" fill="#f1f7ff" stroke="#bfdbfe" stroke-width="2"/>
+  <text x="148" y="930" fill="#1d4ed8" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">POLICY PERIOD SHOWN ON PROVIDED CERTIFICATE</text>
+  <text x="148" y="991" fill="#0b1220" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">September 25, 2026</text>
+  <text x="535" y="991" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="24">through</text>
+  <text x="667" y="991" fill="#0b1220" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">September 25, 2027</text>
+  <text x="148" y="1037" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="16">Coverage dates are transcribed from the document supplied by the business.</text>
+
+  <rect x="112" y="1110" width="976" height="130" rx="10" fill="#030712"/>
+  <text x="148" y="1160" fill="#38bdf8" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">PRIVACY-REDACTED FOR CUSTOMER REFERENCE</text>
+  <text x="148" y="1198" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="17">Personal addresses, contact details, signatures, and policy identifiers are omitted.</text>
+
+  <text x="112" y="1302" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="16">This is a business-prepared summary, not an insurer-issued certificate.</text>
+  <text x="112" y="1336" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="15">Coverage may change. Request a current official certificate when formal proof is required.</text>
+  <path d="M112 1374h976" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="112" y="1412" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1">ELITE DETAILING QUINCY</text>
+  <text x="1088" y="1412" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="end">LIABILITY COVERAGE SUMMARY</text>
+</svg>

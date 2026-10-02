@@ -250,6 +250,11 @@ button:hover {
   background: rgba(0,0,0,.42);
 }
 
+.hero-proof .hero-proof-insurance {
+  border-color: rgba(56,189,248,.58);
+  background: rgba(0,45,110,.58);
+}
+
 .booking-panel {
   justify-self: end;
   width: 100%;

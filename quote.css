@@ -1,3 +1,28 @@
+:root {
+  --color-bg: #020409;
+  --color-bg-soft: #050915;
+  --color-panel: rgba(15, 23, 42, 0.96);
+  --color-panel-strong: rgba(2, 6, 23, 0.98);
+  --color-primary: #38bdf8;
+  --color-primary-strong: #168cff;
+  --color-primary-deep: #0057ff;
+  --color-text: #f8fbff;
+  --color-text-soft: #dbeafe;
+  --color-text-muted: #94a3b8;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 999px;
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --shadow-focus: 0 0 0 4px rgba(22, 140, 255, 0.15);
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.25rem;
+  --space-2xl: 3.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +35,32 @@ html {
 }
 
 body {
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  background: #020409;
-  color: white;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
   overflow-x: hidden;
   min-width: 320px;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.nav-btn,
+.btn,
+button,
+.package-price strong,
+.premium-price strong,
+.review-meta strong,
+.city-panel h3,
+.contact a,
+.site-footer strong {
+  font-family: "Manrope", "Inter", Arial, sans-serif;
 }
 
 .hero {
@@ -156,9 +202,9 @@ nav {
 .eyebrow {
   color: #38bdf8;
   text-transform: uppercase;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.2px;
   font-weight: 900;
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 16px;
 }
 
@@ -166,14 +212,16 @@ h1 {
   font-size: clamp(50px, 7.5vw, 96px);
   line-height: .9;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: -0.05em;
   margin-bottom: 26px;
   text-shadow: 0 0 30px rgba(0,0,0,.9);
 }
 
 .hero-headline {
   font-size: clamp(44px, 7.5vw, 86px);
-  line-height: 1;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.06em;
 }
 
 .hero-word-window {
@@ -187,6 +235,7 @@ h1 {
   display: flex;
   flex-direction: column;
   animation: hero-service-cascade 9s infinite cubic-bezier(.76, 0, .24, 1);
+  will-change: transform;
 }
 
 .hero-word-track > span {
@@ -195,6 +244,7 @@ h1 {
   align-items: center;
   height: 1em;
   white-space: nowrap;
+  letter-spacing: -0.04em;
 }
 
 .hero-headline-support {
@@ -203,6 +253,8 @@ h1 {
   font-size: clamp(22px, 3vw, 35px);
   line-height: 1.2;
   text-transform: none;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 @keyframes hero-service-cascade {
@@ -213,6 +265,16 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   .hero-word-track {
     animation: none;
   }

@@ -1753,6 +1753,15 @@ button:hover {
   margin-top: 30px;
 }
 
+.city-anchor-targets {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .city-panel {
   display: none;
   padding: 30px;

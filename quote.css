@@ -171,6 +171,53 @@ h1 {
   text-shadow: 0 0 30px rgba(0,0,0,.9);
 }
 
+.hero-headline {
+  font-size: clamp(44px, 7.5vw, 86px);
+  line-height: 1;
+}
+
+.hero-word-window {
+  display: block;
+  height: 1em;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.hero-word-track {
+  display: flex;
+  flex-direction: column;
+  animation: hero-service-cascade 9s infinite cubic-bezier(.76, 0, .24, 1);
+}
+
+.hero-word-track > span {
+  display: flex;
+  flex: 0 0 1em;
+  align-items: center;
+  height: 1em;
+  white-space: nowrap;
+}
+
+.hero-headline-support {
+  display: block;
+  margin-top: .22em;
+  font-size: clamp(22px, 3vw, 35px);
+  line-height: 1.2;
+  text-transform: none;
+}
+
+@keyframes hero-service-cascade {
+  0%, 26% { transform: translateY(0); }
+  33.333%, 60% { transform: translateY(-25%); }
+  66.666%, 93.333% { transform: translateY(-50%); }
+  100% { transform: translateY(-75%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word-track {
+    animation: none;
+  }
+}
+
 h2 {
   font-size: clamp(36px, 5vw, 66px);
   line-height: .98;
@@ -1937,6 +1984,15 @@ small {
     line-height: .94;
   }
 
+  .hero-headline {
+    font-size: clamp(38px, 11vw, 58px);
+    line-height: 1;
+  }
+
+  .hero-headline-support {
+    font-size: clamp(21px, 6vw, 27px);
+  }
+
   h2 {
     font-size: clamp(32px, 10vw, 38px);
     line-height: 1.02;
@@ -2091,6 +2147,14 @@ small {
 
   h1 {
     font-size: 36px;
+  }
+
+  .hero-headline {
+    font-size: 36px;
+  }
+
+  .hero-headline-support {
+    font-size: 20px;
   }
 
   .eyebrow {

@@ -278,6 +278,22 @@ h1 {
   .hero-word-track {
     animation: none;
   }
+
+  .reveal,
+  .reveal-ready .reveal,
+  .reveal-ready .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .product-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .product-marquee {
+    overflow-x: auto;
+  }
 }
 
 h2 {
@@ -530,6 +546,9 @@ button:hover {
 .quote,
 .closing,
 .proof-section,
+.detailing-benefits,
+.restorative-detailing,
+.product-marquee-section,
 .gallery-proof,
 .process,
 .services,
@@ -883,6 +902,52 @@ button:hover {
     #050915;
 }
 
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-ready .reveal-image {
+  transform: translateY(16px) scale(.985);
+}
+
+.reveal-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-ready .reveal-image.is-visible {
+  transform: translateY(0) scale(1);
+}
+
+.reveal-ready .reveal-stagger > .reveal:nth-child(2),
+.reveal-ready .reveal-stagger > article:nth-child(2).reveal,
+.reveal-ready .reveal-stagger > div:nth-child(2).reveal {
+  transition-delay: 90ms;
+}
+
+.reveal-ready .reveal-stagger > .reveal:nth-child(3),
+.reveal-ready .reveal-stagger > article:nth-child(3).reveal,
+.reveal-ready .reveal-stagger > div:nth-child(3).reveal {
+  transition-delay: 180ms;
+}
+
+.reveal-ready .reveal-stagger > .reveal:nth-child(4),
+.reveal-ready .reveal-stagger > article:nth-child(4).reveal,
+.reveal-ready .reveal-stagger > div:nth-child(4).reveal {
+  transition-delay: 270ms;
+}
+
+.reveal-ready .reveal-stagger > .reveal:nth-child(n+5),
+.reveal-ready .reveal-stagger > article:nth-child(n+5).reveal,
+.reveal-ready .reveal-stagger > div:nth-child(n+5).reveal {
+  transition-delay: 320ms;
+}
+
 .service-grid,
 .faq-grid {
   display: grid;
@@ -914,6 +979,206 @@ button:hover {
 .site-footer span {
   color: #cbd5e1;
   line-height: 1.65;
+}
+
+.restorative-detailing {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 46px;
+  align-items: start;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(56,189,248,.16), transparent 32%),
+    #020409;
+}
+
+.restorative-grid,
+.benefit-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.restorative-grid article,
+.benefit-card-grid article,
+.faq-item {
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,.045);
+}
+
+.restorative-grid article,
+.benefit-card-grid article {
+  padding: 28px;
+}
+
+.restorative-grid h3,
+.benefit-card-grid h3 {
+  margin-bottom: 12px;
+  color: white;
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.restorative-grid p,
+.benefit-card-grid p,
+.faq-answer p {
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.detailing-benefits {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(0,102,255,.14), transparent 34%),
+    #050915;
+}
+
+.benefit-card-grid {
+  margin-top: 38px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-marquee-section {
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #020409, #050915);
+}
+
+.product-marquee-heading {
+  max-width: 960px;
+}
+
+.product-marquee {
+  position: relative;
+  margin-top: 38px;
+  overflow: hidden;
+  border-top: 1px solid rgba(56,189,248,.28);
+  border-bottom: 1px solid rgba(56,189,248,.28);
+  background: rgba(255,255,255,.035);
+}
+
+.product-marquee::before,
+.product-marquee::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(16vw, 180px);
+  content: "";
+  pointer-events: none;
+}
+
+.product-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #020409, rgba(2,4,9,0));
+}
+
+.product-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #020409, rgba(2,4,9,0));
+}
+
+.product-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  padding: 22px 18px;
+  animation: product-marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.brand-tile {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 220px;
+  height: 104px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 22px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 8px;
+  background: rgba(255,255,255,.94);
+  box-shadow: inset 0 0 0 1px rgba(2,6,23,.08);
+}
+
+.brand-tile img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.brand-tile-wide img {
+  max-height: 62px;
+}
+
+.brand-tile-square img {
+  max-height: 68px;
+}
+
+@keyframes product-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.faq-accordion {
+  display: grid;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.faq-item {
+  overflow: hidden;
+}
+
+.faq-question {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0;
+  padding: 22px 26px;
+  color: white;
+  background: transparent;
+  box-shadow: none;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.faq-question::after {
+  flex: 0 0 auto;
+  color: #38bdf8;
+  content: "+";
+  font-size: 24px;
+  line-height: 1;
+}
+
+.faq-question[aria-expanded="true"]::after {
+  content: "-";
+}
+
+.faq-question:hover,
+.faq-question:focus-visible {
+  transform: none;
+  background: rgba(56,189,248,.08);
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: -2px;
+}
+
+.faq-answer {
+  padding: 0 26px 24px;
+}
+
+.faq-enhanced .faq-answer[hidden] {
+  display: none;
 }
 
 .media-results {
@@ -1213,6 +1478,10 @@ button:hover {
 
 .portfolio-card:hover img {
   filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.035);
+}
+
+.reveal-ready .portfolio-card:hover img.reveal-image.is-visible {
   transform: scale(1.035);
 }
 
@@ -1864,7 +2133,10 @@ small {
   .city-detail-grid,
   .city-band,
   .proof-section,
+  .restorative-detailing,
   .benefits,
+  .benefit-card-grid,
+  .restorative-grid,
   .steps,
   .city-panel ul,
   .service-grid,
@@ -2015,6 +2287,9 @@ small {
   .quote,
   .closing,
   .proof-section,
+  .detailing-benefits,
+  .restorative-detailing,
+  .product-marquee-section,
   .gallery-proof,
   .process,
   .services,
@@ -2077,7 +2352,10 @@ small {
   .proof-copy p,
   .steps p,
   .service-grid p,
+  .restorative-grid p,
+  .benefit-card-grid p,
   .media-card p,
+  .faq-answer p,
   .faq-grid p,
   .review-card p {
     font-size: 17px;
@@ -2116,6 +2394,9 @@ small {
   .city-band,
   .closing,
   .proof-section,
+  .detailing-benefits,
+  .restorative-detailing,
+  .product-marquee-section,
   .gallery-proof,
   .process,
   .services,
@@ -2141,9 +2422,12 @@ small {
   .city-detail-grid article,
   .city-quote-card,
   .benefits div,
+  .restorative-grid article,
+  .benefit-card-grid article,
   .steps div,
   .service-grid article,
   .faq-grid article,
+  .faq-question,
   .media-card figcaption,
   .media-cta,
   .review-card,
@@ -2161,6 +2445,38 @@ small {
   .media-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .product-marquee::before,
+  .product-marquee::after {
+    width: 44px;
+  }
+
+  .product-track {
+    gap: 12px;
+    padding: 18px 12px;
+  }
+
+  .brand-tile {
+    width: 176px;
+    height: 88px;
+    padding: 14px 18px;
+  }
+
+  .brand-tile img {
+    max-height: 58px;
+  }
+
+  .brand-tile-wide img {
+    max-height: 50px;
+  }
+
+  .brand-tile-square img {
+    max-height: 54px;
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px;
   }
 
   .city-hero-photo {
@@ -2231,7 +2547,10 @@ small {
   .proof-copy p,
   .steps p,
   .service-grid p,
+  .restorative-grid p,
+  .benefit-card-grid p,
   .media-card p,
+  .faq-answer p,
   .faq-grid p,
   .review-card p {
     font-size: 16px;

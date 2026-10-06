@@ -27,10 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="quote.css?v=20261004" />
+  <link rel="stylesheet" href="quote.css?v=20261006" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -973,6 +970,86 @@
 
   <script>
     const revealMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const hero = document.querySelector(".hero");
+    const finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    if (hero && !revealMotionQuery.matches) {
+      const heroMotion = {
+        targetX: 0,
+        targetY: 0,
+        currentX: 0,
+        currentY: 0,
+        raf: null,
+        running: true
+      };
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+      function setHeroPointer(event) {
+        if (!finePointerQuery.matches) return;
+
+        const rect = hero.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+
+        heroMotion.targetX = clamp(x, -1, 1);
+        heroMotion.targetY = clamp(y, -1, 1);
+      }
+
+      function settleHeroPointer() {
+        heroMotion.targetX = 0;
+        heroMotion.targetY = 0;
+      }
+
+      function renderHeroMotion(time) {
+        if (!heroMotion.running) return;
+
+        const rect = hero.getBoundingClientRect();
+        const scrollProgress = clamp(-rect.top / Math.max(rect.height, 1), 0, 1);
+        const isNearViewport = rect.bottom > -160 && rect.top < window.innerHeight + 160;
+
+        heroMotion.currentX += (heroMotion.targetX - heroMotion.currentX) * 0.075;
+        heroMotion.currentY += (heroMotion.targetY - heroMotion.currentY) * 0.075;
+
+        if (isNearViewport) {
+          const driftX = Math.sin(time / 6200) * 0.28;
+          const driftY = Math.cos(time / 7600) * 0.18;
+          const x = heroMotion.currentX + driftX;
+          const y = heroMotion.currentY + driftY;
+
+          hero.style.setProperty("--hero-shift-x", `${(x * 14).toFixed(2)}px`);
+          hero.style.setProperty("--hero-shift-y", `${((-y * 6) + (scrollProgress * 24)).toFixed(2)}px`);
+          hero.style.setProperty("--hero-rotate-x", `${(-y * 1.15).toFixed(3)}deg`);
+          hero.style.setProperty("--hero-rotate-y", `${(x * 2.1).toFixed(3)}deg`);
+          hero.style.setProperty("--hero-scale", (1.04 + scrollProgress * 0.045).toFixed(4));
+          hero.style.setProperty("--hero-light-x", `${clamp(58 + x * 12, 38, 76).toFixed(2)}%`);
+          hero.style.setProperty("--hero-light-y", `${clamp(46 + y * 5, 34, 58).toFixed(2)}%`);
+          hero.style.setProperty("--hero-streak-x", `${((time / 70) % 240).toFixed(2)}px`);
+          hero.style.setProperty("--hero-streak-y", `${(scrollProgress * 130).toFixed(2)}px`);
+          hero.style.setProperty("--hero-atmosphere", (0.62 + scrollProgress * 0.14).toFixed(3));
+        }
+
+        heroMotion.raf = requestAnimationFrame(renderHeroMotion);
+      }
+
+      hero.addEventListener("pointermove", setHeroPointer);
+      hero.addEventListener("pointerleave", settleHeroPointer);
+      hero.addEventListener("pointercancel", settleHeroPointer);
+
+      document.addEventListener("visibilitychange", () => {
+        heroMotion.running = !document.hidden;
+
+        if (heroMotion.running && !heroMotion.raf) {
+          heroMotion.raf = requestAnimationFrame(renderHeroMotion);
+        } else if (!heroMotion.running && heroMotion.raf) {
+          cancelAnimationFrame(heroMotion.raf);
+          heroMotion.raf = null;
+        }
+      });
+
+      heroMotion.raf = requestAnimationFrame(renderHeroMotion);
+    }
+
     const revealSelectors = [
       ".hero-content .eyebrow",
       ".hero-content h1",

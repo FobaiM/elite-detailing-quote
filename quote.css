@@ -64,6 +64,16 @@ button,
 }
 
 .hero {
+  --hero-shift-x: 0px;
+  --hero-shift-y: 0px;
+  --hero-rotate-x: 0deg;
+  --hero-rotate-y: 0deg;
+  --hero-scale: 1.04;
+  --hero-light-x: 58%;
+  --hero-light-y: 46%;
+  --hero-streak-x: 0px;
+  --hero-streak-y: 0px;
+  --hero-atmosphere: .78;
   min-height: 96vh;
   min-height: 96svh;
   background:
@@ -72,6 +82,63 @@ button,
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  perspective: 1200px;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero::before {
+  z-index: 0;
+  inset: -4%;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.97), rgba(0,0,0,.34) 46%, rgba(0,0,0,.78)),
+    url("elite-cover.png");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.08) contrast(1.05);
+  transform:
+    translate3d(var(--hero-shift-x), var(--hero-shift-y), 0)
+    scale(var(--hero-scale))
+    rotateX(var(--hero-rotate-x))
+    rotateY(var(--hero-rotate-y));
+  transform-origin: 58% 48%;
+  transition: filter .3s ease;
+  will-change: transform;
+}
+
+.hero::after {
+  z-index: 1;
+  opacity: var(--hero-atmosphere);
+  background:
+    radial-gradient(circle at var(--hero-light-x) var(--hero-light-y), rgba(255,255,255,.18), rgba(56,189,248,.08) 10%, transparent 29%),
+    linear-gradient(112deg, transparent 12%, rgba(255,255,255,.08) 21%, transparent 31%),
+    repeating-linear-gradient(105deg, transparent 0 92px, rgba(56,189,248,.09) 94px 96px, transparent 98px 170px),
+    linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.56) 34%, rgba(0,0,0,.12) 58%, rgba(0,0,0,.76) 100%);
+  background-position:
+    center,
+    var(--hero-streak-x) 0,
+    var(--hero-streak-x) var(--hero-streak-y),
+    center;
+  mix-blend-mode: screen;
+  transform: translateZ(0);
+  will-change: background-position, opacity;
+}
+
+.hero > nav,
+.hero-overlay {
+  position: relative;
+}
+
+.hero-overlay {
+  z-index: 2;
 }
 
 nav {
@@ -277,6 +344,24 @@ h1 {
 
   .hero-word-track {
     animation: none;
+  }
+
+  .hero {
+    --hero-shift-x: 0px;
+    --hero-shift-y: 0px;
+    --hero-rotate-x: 0deg;
+    --hero-rotate-y: 0deg;
+    --hero-scale: 1.02;
+  }
+
+  .hero::before {
+    transform: scale(1.02) !important;
+    will-change: auto;
+  }
+
+  .hero::after {
+    opacity: .42 !important;
+    will-change: auto;
   }
 
   .reveal,
@@ -2108,6 +2193,21 @@ small {
   .hero {
     background-position: center right;
     min-height: auto;
+    --hero-scale: 1.03;
+    --hero-atmosphere: .5;
+  }
+
+  .hero::before {
+    inset: -2%;
+    background-position: center right;
+    filter: saturate(1.04) contrast(1.03);
+  }
+
+  .hero::after {
+    opacity: .48;
+    background:
+      radial-gradient(circle at var(--hero-light-x) 40%, rgba(255,255,255,.12), rgba(56,189,248,.06) 12%, transparent 32%),
+      linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.58) 52%, rgba(0,0,0,.74) 100%);
   }
 
   .elite-bar,

@@ -462,37 +462,6 @@ button:hover {
   background: rgba(0,0,0,.42);
 }
 
-.hero-proof .hero-proof-insurance {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  border-color: rgba(56,189,248,.58);
-  background: rgba(0,45,110,.58);
-  color: #fff;
-  text-decoration: none;
-}
-
-.hero-proof .hero-proof-insurance small {
-  margin: 0;
-  color: #7dd3fc;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.hero-proof .hero-proof-insurance:hover,
-.hero-proof .hero-proof-insurance:focus-visible {
-  border-color: #7dd3fc;
-  background: rgba(0,87,255,.34);
-}
-
-.hero-proof .hero-proof-insurance:focus-visible {
-  outline: 2px solid #7dd3fc;
-  outline-offset: 3px;
-}
-
 .booking-panel {
   justify-self: end;
   width: 100%;
@@ -1264,6 +1233,63 @@ button:hover {
 
 .faq-enhanced .faq-answer[hidden] {
   display: none;
+}
+
+.coverage-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 22px 26px;
+  border: 1px solid rgba(56,189,248,.36);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(56,189,248,.14), transparent 34%),
+    rgba(2,6,23,.82);
+  box-shadow: 0 22px 60px rgba(0,0,0,.28);
+}
+
+.coverage-note span {
+  display: block;
+  margin-bottom: 5px;
+  color: #38bdf8;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.coverage-note strong {
+  display: block;
+  color: white;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.2;
+}
+
+.coverage-note a {
+  flex: 0 0 auto;
+  color: #e5f4ff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 13px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(22,140,255,.14);
+}
+
+.coverage-note a:hover,
+.coverage-note a:focus-visible {
+  border-color: #7dd3fc;
+  background: rgba(0,87,255,.28);
+}
+
+.coverage-note a:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 3px;
 }
 
 .media-results {
@@ -2526,6 +2552,11 @@ small {
   .review-cta .buttons {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .coverage-note {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .media-footer {

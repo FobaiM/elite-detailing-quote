@@ -971,8 +971,6 @@
           hero.style.setProperty("--hero-scale", (1.04 + scrollProgress * 0.045).toFixed(4));
           hero.style.setProperty("--hero-light-x", `${clamp(58 + x * 12, 38, 76).toFixed(2)}%`);
           hero.style.setProperty("--hero-light-y", `${clamp(46 + y * 5, 34, 58).toFixed(2)}%`);
-          hero.style.setProperty("--hero-streak-x", `${((time / 70) % 240).toFixed(2)}px`);
-          hero.style.setProperty("--hero-streak-y", `${(scrollProgress * 130).toFixed(2)}px`);
           hero.style.setProperty("--hero-atmosphere", (0.62 + scrollProgress * 0.14).toFixed(3));
         }
 

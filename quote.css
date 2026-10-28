@@ -71,8 +71,6 @@ button,
   --hero-scale: 1.04;
   --hero-light-x: 58%;
   --hero-light-y: 46%;
-  --hero-streak-x: 0px;
-  --hero-streak-y: 0px;
   --hero-atmosphere: .78;
   min-height: 96vh;
   min-height: 96svh;
@@ -119,17 +117,13 @@ button,
   opacity: var(--hero-atmosphere);
   background:
     radial-gradient(circle at var(--hero-light-x) var(--hero-light-y), rgba(255,255,255,.18), rgba(56,189,248,.08) 10%, transparent 29%),
-    linear-gradient(112deg, transparent 12%, rgba(255,255,255,.08) 21%, transparent 31%),
-    repeating-linear-gradient(105deg, transparent 0 92px, rgba(56,189,248,.09) 94px 96px, transparent 98px 170px),
     linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.56) 34%, rgba(0,0,0,.12) 58%, rgba(0,0,0,.76) 100%);
   background-position:
     center,
-    var(--hero-streak-x) 0,
-    var(--hero-streak-x) var(--hero-streak-y),
     center;
   mix-blend-mode: screen;
   transform: translateZ(0);
-  will-change: background-position, opacity;
+  will-change: opacity;
 }
 
 .hero > nav,
